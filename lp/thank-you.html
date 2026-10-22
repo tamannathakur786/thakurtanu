@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Thank You | Riwaaz Clothing - Request Received</title>
+  <meta name="description" content="Thank you for your inquiry with Riwaaz Clothing. Your bespoke request and exclusive festive discount code have been received.">
+  <meta name="robots" content="noindex, follow">
+
+  <!-- Google Fonts & FontAwesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Landing Page Stylesheet -->
+  <link rel="stylesheet" href="lp-style.css">
+
+  <!-- Optional: Google Ads Conversion Tracking Tag Placeholder -->
+  <!--
+  <script>
+    // Paste your Google Ads Event Snippet here:
+    // gtag('event', 'conversion', {'send_to': 'AW-XXXXXXXXX/YYYYYYYYYYYY'});
+  </script>
+  -->
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="lp-topbar">
+    <span class="lp-topbar-tag">REQUEST CONFIRMED</span>
+    <span>Your Extra 10% Discount Code <strong>RIWAAZ10</strong> is Active</span>
+    <span style="opacity: 0.5;">|</span>
+    <span>Stylist Hotline: <a href="https://wa.me/918580540470" target="_blank">+91 8580540470</a></span>
+  </div>
+
+  <!-- Focused Header -->
+  <header class="lp-header">
+    <div class="container lp-header-inner">
+      <a href="index.html" class="lp-logo" title="Riwaaz Clothing">
+        <div class="lp-logo-main">
+          <i class="fas fa-crown" style="color: var(--gold); font-size: 1.25rem;"></i>
+          <span>RIWAAZ</span>
+        </div>
+        <span class="lp-logo-tagline">ROYAL ATELIER • ESTD 2026</span>
+      </a>
+
+      <div class="lp-header-actions">
+        <a href="https://wa.me/918580540470" target="_blank" class="lp-btn-wa-header">
+          <i class="fab fa-whatsapp" style="font-size: 1.15rem;"></i>
+          <span>WhatsApp: 8580540470</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Thank You Content Section -->
+  <section class="lp-thankyou-section">
+    <div class="container">
+      <div class="lp-thankyou-card">
+        <!-- Success Check Icon -->
+        <div class="lp-thankyou-icon-wrap">
+          <i class="fas fa-check"></i>
+        </div>
+
+        <div class="lp-thankyou-badge">
+          <i class="fas fa-certificate text-gold"></i> INQUIRY CONFIRMED
+        </div>
+
+        <h1 class="lp-thankyou-title" id="thankYouTitle">
+          Thank You! Your Request Has Been Received.
+        </h1>
+
+        <p class="lp-thankyou-subtitle" id="thankYouSubtitle">
+          Namaste! Our master stylists have received your inquiry. We are preparing tailored fabric options and sizing guidance for your celebration.
+        </p>
+
+        <!-- Coupon Code Box -->
+        <div class="lp-coupon-ticket">
+          <div class="lp-ticket-info">
+            <span class="lp-ticket-tag"><i class="fas fa-gift text-gold"></i> Your Exclusive Ad Discount Code</span>
+            <div class="lp-ticket-code" id="promoCodeDisplay">RIWAAZ10</div>
+            <span class="lp-ticket-desc">Extra 10% OFF on all Anarkalis, Raw Silk &amp; Velvet Suits + Free Fall-Pico</span>
+          </div>
+          <button class="lp-btn-copy-code" id="copyCodeBtn" onclick="copyPromoCode()">
+            <i class="far fa-copy"></i>
+            <span id="copyBtnText">Copy Code</span>
+          </button>
+        </div>
+
+        <!-- Submitted Inquiry Summary -->
+        <div class="lp-inquiry-summary">
+          <h4><i class="fas fa-file-invoice text-gold"></i> Your Consultation Details</h4>
+          <div class="lp-summary-grid">
+            <div class="lp-summary-item">
+              Client Name: <strong id="summaryName">Valued Client</strong>
+            </div>
+            <div class="lp-summary-item">
+              WhatsApp Number: <strong id="summaryPhone">8580540470</strong>
+            </div>
+            <div class="lp-summary-item">
+              Collection Interest: <strong id="summaryCategory">Royal Festive Ensembles</strong>
+            </div>
+            <div class="lp-summary-item">
+              Target Date: <strong id="summaryDate">Flexible / Upcoming Event</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 Steps of What Happens Next -->
+        <div class="lp-next-steps">
+          <h4>What Happens Next?</h4>
+          <div class="lp-steps-grid">
+            <div class="lp-step-item">
+              <div class="lp-step-num">1</div>
+              <h5>Stylist Review</h5>
+              <p>Our senior atelier team checks ready-to-ship stock and custom sizing availability.</p>
+            </div>
+            <div class="lp-step-item">
+              <div class="lp-step-num">2</div>
+              <h5>Video Demonstration</h5>
+              <p>We share high-definition fabric video clips and embroidery close-ups on WhatsApp.</p>
+            </div>
+            <div class="lp-step-item">
+              <div class="lp-step-num">3</div>
+              <h5>Fast Dispatch</h5>
+              <p>Your finished ensemble is shipped via Bluedart/Delhivery Express with live tracking.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="lp-thankyou-actions">
+          <a href="#" id="directWaChatBtn" target="_blank" class="lp-btn-wa-large">
+            <i class="fab fa-whatsapp" style="font-size: 1.35rem;"></i>
+            <span>Chat with Stylist on WhatsApp (8580540470)</span>
+          </a>
+          <a href="../collections.html" class="lp-btn-catalog-return">
+            <i class="fas fa-th-large"></i>
+            <span>Browse Full Catalog</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Minimal Footer -->
+  <footer class="lp-footer">
+    <div class="container">
+      <div class="lp-logo-main" style="justify-content: center; color: #FFF; font-size: 1.4rem; margin-bottom: 6px;">
+        <i class="fas fa-crown" style="color: var(--gold);"></i>
+        <span>RIWAAZ CLOTHING</span>
+      </div>
+      <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.85rem;">Heirloom Handcrafted Ethnic Wear • Hotline: +91 8580540470</p>
+      <p style="color: rgba(255,255,255,0.4); font-size: 0.72rem; margin-top: 18px;">
+        © 2026 Riwaaz Clothing. All Rights Reserved.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Script to Populate Parameters and Wire WhatsApp -->
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const clientName = urlParams.get("name") || "";
+    const clientPhone = urlParams.get("phone") || "8580540470";
+    const category = urlParams.get("category") || "Royal Festive Ensembles";
+    const neededDate = urlParams.get("date") || "Flexible";
+
+    if (clientName) {
+      document.getElementById("thankYouTitle").textContent = `Thank You, ${clientName}!`;
+      document.getElementById("thankYouSubtitle").textContent = `Namaste ${clientName}! Your consultation request has been received. Our senior stylist is preparing your fabric options & custom sizing advice.`;
+      document.getElementById("summaryName").textContent = clientName;
+    }
+    if (clientPhone) {
+      document.getElementById("summaryPhone").textContent = clientPhone;
+    }
+    if (category) {
+      document.getElementById("summaryCategory").textContent = category;
+    }
+    if (neededDate) {
+      document.getElementById("summaryDate").textContent = neededDate;
+    }
+
+    // Build personalized WhatsApp link
+    const waMessage = `
+👑 *CONSULTATION CONFIRMED - RIWAAZ CLOTHING* 👑
+------------------------------------------------
+Hello Riwaaz Team, I just submitted my consultation form on your website:
+
+👤 *Client Name*: ${clientName || "Valued Client"}
+📞 *Contact Number*: ${clientPhone}
+👗 *Interested In*: ${category}
+📅 *Needed By*: ${neededDate}
+🎟️ *Promo Code*: RIWAAZ10 (Extra 10% OFF)
+
+Looking forward to connecting with your senior stylist!
+    `.trim();
+
+    const waLink = `https://wa.me/918580540470?text=${encodeURIComponent(waMessage)}`;
+    document.getElementById("directWaChatBtn").href = waLink;
+
+    // 1-Click Copy Code Function
+    function copyPromoCode() {
+      const code = document.getElementById("promoCodeDisplay").textContent.trim();
+      navigator.clipboard.writeText(code).then(() => {
+        const btnText = document.getElementById("copyBtnText");
+        btnText.textContent = "Copied!";
+        setTimeout(() => {
+          btnText.textContent = "Copy Code";
+        }, 2500);
+      }).catch(() => {
+        alert("Code: " + code);
+      });
+    }
+  </script>
+</body>
+</html>

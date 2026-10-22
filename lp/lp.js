@@ -75,6 +75,12 @@ Please confirm fabric availability and share video clips of the current designs!
     `.trim();
 
     openWhatsApp(message);
+
+    // Redirect to Thank You Page for Google Ads Conversion Tracking
+    const redirectUrl = `thank-you.html?name=${encodeURIComponent(name)}&phone=${encodeURIComponent(phone)}&category=${encodeURIComponent(category)}&date=${encodeURIComponent(date || "Flexible")}`;
+    setTimeout(() => {
+      window.location.href = redirectUrl;
+    }, 400);
   });
 
   // 4. Product Card Inquiries
