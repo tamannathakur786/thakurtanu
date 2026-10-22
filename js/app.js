@@ -689,8 +689,11 @@ Please assist me directly on WhatsApp! Thank you!
           <i class="far fa-heart"></i>
           <h4>Your wishlist is waiting</h4>
           <p>Tap the heart icon on any outfit you love to save it here for later.</p>
-          <button class="btn-primary" onclick="window.app.goToCatalog()">
+          <button type="button" class="btn-primary" onclick="window.app ? window.app.goToCatalog() : null">
             Explore Collection
+          </button>
+          <button type="button" class="btn-secondary" style="margin-top: 12px; width: 100%; justify-content: center;" onclick="window.app ? window.app.closeDrawers() : null">
+            Continue Shopping
           </button>
         </div>
       `;
@@ -887,18 +890,48 @@ Please assist me directly on WhatsApp! Thank you!
     closeDrawers();
     cartDrawer?.classList.add("active");
     drawerOverlay?.classList.add("active");
+    document.body.classList.add("drawer-open");
   };
 
   const openWishlist = () => {
     closeDrawers();
     wishlistDrawer?.classList.add("active");
     drawerOverlay?.classList.add("active");
+    document.body.classList.add("drawer-open");
   };
 
-  const closeDrawers = () => {
+  const toggleWishlistDrawer = (e) => {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    if (wishlistDrawer?.classList.contains("active")) {
+      closeDrawers();
+    } else {
+      openWishlist();
+    }
+  };
+
+  const toggleCartDrawer = (e) => {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    if (cartDrawer?.classList.contains("active")) {
+      closeDrawers();
+    } else {
+      openCart();
+    }
+  };
+
+  const closeDrawers = (e) => {
+    if (e && e.stopPropagation) {
+      e.stopPropagation();
+    }
     cartDrawer?.classList.remove("active");
     wishlistDrawer?.classList.remove("active");
     drawerOverlay?.classList.remove("active");
+    document.body.classList.remove("drawer-open");
   };
 
   const openModal = (modalEl) => {
@@ -920,13 +953,50 @@ Please assist me directly on WhatsApp! Thank you!
 
 
   // Event Listeners for Drawers & Modals
-  cartBtn?.addEventListener("click", openCart);
+  cartBtn?.addEventListener("click", toggleCartDrawer);
   cartClose?.addEventListener("click", closeDrawers);
-  wishlistBtn?.addEventListener("click", openWishlist);
+  cartClose?.addEventListener("touchend", closeDrawers);
+
+  wishlistBtn?.addEventListener("click", toggleWishlistDrawer);
   wishlistClose?.addEventListener("click", closeDrawers);
+  wishlistClose?.addEventListener("touchend", closeDrawers);
+
   drawerOverlay?.addEventListener("click", closeDrawers);
+  drawerOverlay?.addEventListener("touchend", closeDrawers);
+
   modalOverlay?.addEventListener("click", closeModals);
   cartWaCheckoutBtn?.addEventListener("click", checkoutOnWhatsApp);
+
+  // Close drawers & modals with Escape key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" || e.keyCode === 27) {
+      closeDrawers();
+      closeModals();
+    }
+  });
+
+  // Global Outside-Click Listener: Closes any open drawer when clicking outside it
+  document.addEventListener("click", (e) => {
+    const isWishlistOpen = wishlistDrawer?.classList.contains("active");
+    const isCartOpen = cartDrawer?.classList.contains("active");
+
+    if (!isWishlistOpen && !isCartOpen) return;
+
+    // Check if click was inside an active drawer or on its trigger buttons
+    const insideWishlist = wishlistDrawer?.contains(e.target);
+    const insideCart = cartDrawer?.contains(e.target);
+    const onWishlistTrigger = wishlistBtn?.contains(e.target) || document.getElementById("mobNavWishlist")?.contains(e.target);
+    const onCartTrigger = cartBtn?.contains(e.target) || document.getElementById("mobNavCart")?.contains(e.target);
+    const onCardAction = e.target.closest && (e.target.closest(".card-wishlist-btn") || e.target.closest(".btn-card-bag") || e.target.closest(".btn-qv-bag"));
+
+    if (isWishlistOpen && !insideWishlist && !onWishlistTrigger && !onCardAction) {
+      closeDrawers();
+    }
+
+    if (isCartOpen && !insideCart && !onCartTrigger && !onCardAction) {
+      closeDrawers();
+    }
+  });
 
   // Floating WhatsApp Concierge Toggle
   waTriggerBtn?.addEventListener("click", () => {
@@ -938,8 +1008,9 @@ Please assist me directly on WhatsApp! Thank you!
 
   const goToCatalog = () => {
     closeDrawers();
-    if (document.getElementById("catalogSection")) {
-      document.getElementById("catalogSection").scrollIntoView({ behavior: "smooth" });
+    const catalogSec = document.getElementById("catalogSection") || document.getElementById("featuredProductGrid") || document.getElementById("productGrid");
+    if (catalogSec) {
+      catalogSec.scrollIntoView({ behavior: "smooth" });
     } else {
       window.location.href = "collections.html";
     }
@@ -955,8 +1026,8 @@ Please assist me directly on WhatsApp! Thank you!
     }
   });
   document.getElementById("mobNavCatalog")?.addEventListener("click", goToCatalog);
-  document.getElementById("mobNavWishlist")?.addEventListener("click", openWishlist);
-  document.getElementById("mobNavCart")?.addEventListener("click", openCart);
+  document.getElementById("mobNavWishlist")?.addEventListener("click", toggleWishlistDrawer);
+  document.getElementById("mobNavCart")?.addEventListener("click", toggleCartDrawer);
   document.getElementById("mobNavWhatsApp")?.addEventListener("click", () => {
     openWhatsApp(WHATSAPP_CONFIG.defaultGreeting);
   });
@@ -1027,6 +1098,8 @@ Please assist me directly on WhatsApp! Thank you!
     removeFromCart,
     openCart,
     openWishlist,
+    toggleWishlistDrawer,
+    toggleCartDrawer,
     closeDrawers,
     openSizeGuide,
     setSizeUnit,
