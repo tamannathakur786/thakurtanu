@@ -1,0 +1,938 @@
+/* ==========================================================================
+   Riwaaz Clothing - Google Ads High-Converting Landing Page Stylesheet
+   Palette: Royal Crimson (#7A1A2E), Antique Zari Gold (#C89D46), Warm Ivory (#FAF7F2)
+   ========================================================================== */
+
+:root {
+  --primary: #7A1A2E;
+  --primary-dark: #540D1D;
+  --primary-light: #94253E;
+  --primary-subtle: #FAF0F2;
+  
+  --gold: #C89D46;
+  --gold-light: #E8D39E;
+  --gold-dark: #9E7728;
+  --gold-gradient: linear-gradient(135deg, #DFBF77 0%, #C89D46 50%, #A87D29 100%);
+  --crimson-gradient: linear-gradient(135deg, #94253E 0%, #7A1A2E 50%, #4D0A18 100%);
+  --whatsapp: #25D366;
+  --whatsapp-dark: #1EBE5D;
+  --whatsapp-gradient: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+
+  --bg-page: #FAF7F2;
+  --surface: #FFFFFF;
+  --surface-warm: #F4EFE6;
+  --border-light: #EBE3D8;
+  --border-gold: rgba(200, 157, 70, 0.4);
+
+  --text-main: #2C2623;
+  --text-muted: #6B625B;
+  --text-light: #9E948B;
+
+  --font-serif: 'Cinzel', 'Playfair Display', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 6px 20px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 12px 36px rgba(0, 0, 0, 0.12);
+  --shadow-gold: 0 8px 24px rgba(200, 157, 70, 0.25);
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-pill: 9999px;
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+  padding-bottom: 72px; /* For mobile sticky bar */
+}
+
+@media (min-width: 769px) {
+  body {
+    padding-bottom: 0;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+}
+
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ==========================================================================
+   Ad Banner / Ticker
+   ========================================================================== */
+.lp-topbar {
+  background: var(--primary-dark);
+  color: #FFF;
+  padding: 10px 16px;
+  text-align: center;
+  font-size: 0.84rem;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.lp-topbar-tag {
+  background: var(--gold-gradient);
+  color: var(--primary-dark);
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  letter-spacing: 1px;
+}
+
+.lp-topbar a {
+  color: var(--gold-light);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   Minimalist Focused Header (Zero Leaks for Ad Conversions)
+   ========================================================================== */
+.lp-header {
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-light);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--shadow-sm);
+}
+
+.lp-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 76px;
+}
+
+.lp-logo {
+  display: flex;
+  flex-direction: column;
+}
+
+.lp-logo-main {
+  font-family: var(--font-serif);
+  font-size: 1.55rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lp-logo-tagline {
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: var(--gold-dark);
+  text-transform: uppercase;
+}
+
+.lp-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.lp-header-trust {
+  display: none;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+@media (min-width: 992px) {
+  .lp-header-trust {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+}
+
+.lp-header-trust i {
+  color: #F59E0B;
+}
+
+.lp-btn-wa-header {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--whatsapp-gradient);
+  color: #FFF;
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 10px 20px;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+  transition: var(--transition);
+}
+
+.lp-btn-wa-header:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.45);
+}
+
+/* ==========================================================================
+   Hero Section with Conversion Form
+   ========================================================================== */
+.lp-hero {
+  position: relative;
+  background: linear-gradient(180deg, #FAF4EB 0%, #FAF7F2 100%);
+  padding: 48px 0 64px;
+  border-bottom: 1px solid var(--border-light);
+  overflow: hidden;
+}
+
+.lp-hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.lp-pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(200, 157, 70, 0.15);
+  color: var(--primary-dark);
+  border: 1px solid var(--border-gold);
+  padding: 6px 16px;
+  border-radius: var(--radius-pill);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  margin-bottom: 20px;
+}
+
+.lp-hero-title {
+  font-family: var(--font-serif);
+  font-size: 2.8rem;
+  line-height: 1.18;
+  color: var(--primary-dark);
+  margin-bottom: 18px;
+}
+
+.lp-hero-title span.highlight {
+  color: var(--gold-dark);
+  position: relative;
+  display: inline-block;
+}
+
+.lp-hero-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin-bottom: 24px;
+}
+
+/* Value Checklist */
+.lp-checklist {
+  list-style: none;
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.lp-checklist li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.98rem;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.lp-checklist li i {
+  color: var(--whatsapp-dark);
+  font-size: 1.1rem;
+  background: rgba(37, 211, 102, 0.15);
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Urgency Timer Box */
+.lp-timer-box {
+  background: #FFF;
+  border: 1px dashed var(--border-gold);
+  border-radius: var(--radius-md);
+  padding: 14px 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.lp-timer-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.lp-timer-digits {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lp-time-unit {
+  background: var(--surface-warm);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  padding: 6px 10px;
+  text-align: center;
+  min-width: 48px;
+}
+
+.lp-time-unit .num {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--primary-dark);
+  line-height: 1;
+}
+
+.lp-time-unit .lbl {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  color: var(--text-light);
+  font-weight: 700;
+}
+
+/* Hero Lead Capture Card */
+.lp-card-form {
+  background: #FFF;
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-lg);
+  padding: 32px 28px;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+}
+
+.lp-card-badge {
+  position: absolute;
+  top: -14px;
+  right: 24px;
+  background: var(--crimson-gradient);
+  color: #FFF;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  padding: 5px 14px;
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-sm);
+}
+
+.lp-card-header h3 {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  color: var(--primary-dark);
+  margin-bottom: 6px;
+}
+
+.lp-card-header p {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.lp-form-group {
+  margin-bottom: 16px;
+}
+
+.lp-form-label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 6px;
+}
+
+.lp-form-input, .lp-form-select {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  background: var(--surface-warm);
+  font-size: 0.92rem;
+  color: var(--text-main);
+  outline: none;
+  transition: var(--transition);
+}
+
+.lp-form-input:focus, .lp-form-select:focus {
+  border-color: var(--gold);
+  background: #FFF;
+  box-shadow: 0 0 0 3px rgba(200, 157, 70, 0.15);
+}
+
+.lp-btn-submit {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--whatsapp-gradient);
+  color: #FFF;
+  border: none;
+  padding: 16px;
+  border-radius: var(--radius-sm);
+  font-size: 1.02rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.35);
+  transition: var(--transition);
+  margin-top: 10px;
+}
+
+.lp-btn-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.5);
+}
+
+.lp-card-secure {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+/* ==========================================================================
+   Trust Bar
+   ========================================================================== */
+.lp-trust-strip {
+  background: #FFF;
+  border-bottom: 1px solid var(--border-light);
+  padding: 32px 0;
+}
+
+.lp-trust-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.lp-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.lp-trust-icon {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  border-radius: 50%;
+  background: var(--surface-warm);
+  border: 1px solid var(--border-gold);
+  color: var(--gold-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+
+.lp-trust-text h4 {
+  font-size: 0.95rem;
+  color: var(--primary-dark);
+  margin-bottom: 2px;
+}
+
+.lp-trust-text p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   Best Sellers Showcase
+   ========================================================================== */
+.lp-products-section {
+  padding: 64px 0;
+}
+
+.lp-section-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 44px;
+}
+
+.lp-section-tag {
+  color: var(--gold-dark);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.lp-section-title {
+  font-family: var(--font-serif);
+  font-size: 2.3rem;
+  color: var(--primary-dark);
+  margin-bottom: 12px;
+}
+
+.lp-section-desc {
+  font-size: 0.98rem;
+  color: var(--text-muted);
+}
+
+.lp-product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.lp-product-card {
+  background: #FFF;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+}
+
+.lp-product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--border-gold);
+}
+
+.lp-product-img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  background: var(--surface-warm);
+}
+
+.lp-product-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.lp-product-card:hover .lp-product-img {
+  transform: scale(1.05);
+}
+
+.lp-product-discount-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: var(--primary);
+  color: #FFF;
+  font-size: 0.74rem;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+}
+
+.lp-product-bestseller-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: var(--gold-gradient);
+  color: var(--primary-dark);
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+}
+
+.lp-product-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.lp-product-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: var(--gold-dark);
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.lp-product-title {
+  font-family: var(--font-serif);
+  font-size: 1.18rem;
+  color: var(--primary-dark);
+  margin-bottom: 8px;
+  line-height: 1.35;
+}
+
+.lp-product-fabric {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.lp-product-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.lp-price-current {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.lp-price-original {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  text-decoration: line-through;
+}
+
+.lp-price-save {
+  font-size: 0.78rem;
+  color: var(--whatsapp-dark);
+  font-weight: 700;
+  background: rgba(37, 211, 102, 0.12);
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+}
+
+.lp-product-actions {
+  margin-top: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.lp-btn-wa-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--whatsapp-gradient);
+  color: #FFF;
+  border: none;
+  padding: 12px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 0.92rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.lp-btn-wa-card:hover {
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);
+}
+
+/* ==========================================================================
+   Comparison Table (Why Riwaaz Clothing)
+   ========================================================================== */
+.lp-comparison-section {
+  background: var(--surface-warm);
+  padding: 64px 0;
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.lp-comparison-table-wrap {
+  background: #FFF;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-light);
+}
+
+.lp-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.lp-table th, .lp-table td {
+  padding: 16px 20px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-light);
+  font-size: 0.95rem;
+}
+
+.lp-table th {
+  background: #FAF7F2;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.lp-table th.highlight-col, .lp-table td.highlight-col {
+  background: rgba(200, 157, 70, 0.08);
+  font-weight: 700;
+  color: var(--primary-dark);
+}
+
+.lp-table td i.check {
+  color: var(--whatsapp-dark);
+  font-size: 1.15rem;
+}
+
+.lp-table td i.cross {
+  color: #DC2626;
+  font-size: 1.15rem;
+}
+
+/* ==========================================================================
+   Customer Reviews & Video Inspection Proof
+   ========================================================================== */
+.lp-reviews-section {
+  padding: 64px 0;
+}
+
+.lp-reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.lp-review-card {
+  background: #FFF;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+}
+
+.lp-review-stars {
+  color: #F59E0B;
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+}
+
+.lp-review-text {
+  font-size: 0.92rem;
+  color: var(--text-main);
+  line-height: 1.6;
+  margin-bottom: 18px;
+  font-style: italic;
+  flex: 1;
+}
+
+.lp-review-author {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px dashed var(--border-light);
+  padding-top: 12px;
+  font-size: 0.85rem;
+}
+
+.lp-author-name {
+  font-weight: 700;
+  color: var(--primary-dark);
+}
+
+.lp-author-city {
+  color: var(--text-muted);
+  font-size: 0.78rem;
+}
+
+/* ==========================================================================
+   FAQ Section
+   ========================================================================== */
+.lp-faq-section {
+  background: var(--surface-warm);
+  padding: 60px 0 80px;
+}
+
+.lp-faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.lp-faq-item {
+  background: #FFF;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.lp-faq-header {
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--primary-dark);
+}
+
+.lp-faq-body {
+  padding: 0 24px 18px;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  display: none;
+}
+
+.lp-faq-item.active .lp-faq-body {
+  display: block;
+}
+
+.lp-faq-item.active .lp-faq-icon {
+  transform: rotate(180deg);
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.lp-footer {
+  background: var(--primary-dark);
+  color: #FFF;
+  padding: 40px 0 24px;
+  text-align: center;
+}
+
+.lp-footer-phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--gold-light);
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-top: 12px;
+}
+
+/* ==========================================================================
+   Sticky Mobile Action Bar (Crucial for Ad Conversions)
+   ========================================================================== */
+.lp-sticky-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #FFF;
+  padding: 10px 16px;
+  display: flex;
+  gap: 12px;
+  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.12);
+  z-index: 999;
+  border-top: 1px solid var(--border-light);
+}
+
+@media (min-width: 769px) {
+  .lp-sticky-bar {
+    display: none;
+  }
+}
+
+.lp-sticky-btn-call {
+  flex: 1;
+  background: var(--surface-warm);
+  color: var(--primary);
+  border: 1.5px solid var(--primary);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 12px 6px;
+}
+
+.lp-sticky-btn-wa {
+  flex: 1.5;
+  background: var(--whatsapp-gradient);
+  color: #FFF;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 0.92rem;
+  padding: 12px 6px;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.35);
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+@media (max-width: 992px) {
+  .lp-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .lp-product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .lp-trust-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .lp-reviews-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .lp-hero-title {
+    font-size: 2.1rem;
+  }
+  .lp-product-grid {
+    grid-template-columns: 1fr;
+  }
+  .lp-trust-grid {
+    grid-template-columns: 1fr;
+  }
+}
